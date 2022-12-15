@@ -1,4 +1,5 @@
-import requests, json
+import json
+import requests
 
 url = requests.get("https://jsonplaceholder.typicode.com/todos")
 result = url.json()
