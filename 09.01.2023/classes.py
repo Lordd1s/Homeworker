@@ -82,7 +82,7 @@ n = input("Type 'One' or 'Many' for get 'JSON' file: ")
 
 
 def jsons():
-    if n == 1:
+    if n == str("one"):
         utils.get_json_one()
         print("Done")
     elif n == str("Many"):
