@@ -1,4 +1,4 @@
-import utils
+from utils import JSS
 
 # class Automobile:
 #     model_name = "GT Black Series"
@@ -83,11 +83,13 @@ n = input("Type 'One' or 'Many' for get 'JSON' file: ")
 
 def jsons():
     if n == str("one"):
-        utils.get_json_one()
+        JSS.get_json_one()
         print("Done")
     elif n == str("Many"):
-        utils.get_json_many()
+        JSS.get_json_many()
         print("done")
+    else:
+        print("Error")
 
 
 jsons()
