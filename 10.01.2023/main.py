@@ -1,36 +1,50 @@
-# create class todos
-# write datas to class with cycle
-# save to json
-import requests
 import json
+import requests
 
 
 class Todo:
+    def __init__(self, title):
+        self.title = title
 
-    response = requests.get("https://jsonplaceholder.typicode.com/todos/2").json()
+    def get_title(self):
+        print("title: ", self.title)
 
-    def form_obj(raw_data: list[dict], is_log=False) -> list[list[any]]:
-        def for_sort(item: dict):
-            return item["id"]
+    def get_id(self):
+        print("id: ", self.title)
 
-        raw_data.sort(key=for_sort)
+    def get_user(self):
+        print("userId: ", self.title)
 
-        if is_log:
-            print(raw_data)
-        rows = []
-        for dict_obj in raw_data:
-            userid = dict_obj["userId"]
-            ids = dict_obj["id"]
-            title = dict_obj["title"]
-            completed = dict_obj["completed"]
-            row = [userid, ids, title, completed]
-            rows.append(row)
-        if is_log:
-            print(rows)
-        return rows
-    form_obj([response])
-    userid = response[0]
-    ids = response[1]
-    title = response[2]
-    completed = response[3]
-    print("userid: ", userid, ids, title, completed)
+    def get_completed(self):
+        print("completed: ", self.title)
+
+    @staticmethod
+    def serialize(datas):
+        with open('js_datas.json', "w") as file:
+            json.dump(datas, file)
+
+
+response = requests.get("https://jsonplaceholder.typicode.com/todos")
+todos = response.json()
+# print(todos)
+username = []
+ids = []
+titles = []
+comps = []
+for todo in todos:
+    username.append(Todo(todo['userId']))
+    ids.append(Todo(todo['id']))
+    titles.append(Todo(todo['title']))
+    comps.append(Todo(todo['completed']))
+    todo.serialize(todos)
+for todo in username:
+    todo.get_user()
+
+for todo in ids:
+    todo.get_id()
+
+for todo in titles:
+    todo.get_title()
+
+for todo in comps:
+    todo.get_completed()
