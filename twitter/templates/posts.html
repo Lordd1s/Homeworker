@@ -1,0 +1,28 @@
+{% extends "tweet.html" %}
+{% block main %}
+
+<section class="main">
+        <div class="img">
+        <p class="t">Publication</p>
+    </div>
+    <div class="p">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur delectus dolore dolorum earum, expedita impedit ipsum, magnam optio placeat possimus praesentium quas, ratione rem rerum sunt tenetur totam voluptatum?</p>
+    </div>
+
+</section>
+
+{% for i in data_dict %}
+    <section class="main">
+            <div class="img">
+            <p class="t">{{ i.title }}</p>
+        </div>
+        <div class="p">
+            <p>{{ i.description }}</p>
+        </div>
+    </section>
+{% endfor %}
+
+{% endblock main %}
+
+
+

@@ -1,0 +1,126 @@
+body{
+    margin: 0 auto;
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+span{
+    margin-left: 10px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 15%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    position: fixed;
+}
+
+.bird{
+    margin: 1%;
+    size: 50px;
+    display: flex;
+    font-size: 2rem;
+
+}
+
+.hash{
+    margin: 1%;
+    size: 50px;
+    gap: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.main{
+    margin: 3% auto;
+    width: 660px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.inp{
+    margin: 2% auto;
+    display: flex;
+    width: 660px;
+    background-color: gray;
+    height: 40px;
+    border-radius: 15px;
+    justify-content: space-around;
+
+}
+
+input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: gray;
+    border: none;
+    width: 80%;
+    border-radius: 15px;
+}
+
+input:hover{
+    cursor: text;
+    background: rgb(97, 97, 97);
+}
+
+
+.img{
+    background: rgb(85, 85, 85);
+    width: 660px;
+    height: 700px;
+    border-radius: 10px;
+}
+
+.t{
+    color: black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 660px;
+    height: 700px;
+}
+
+.search{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: larger;
+}
+
+.button{
+    width: 55px;
+    height: 30px;
+    background: rgba(212, 77, 77, 0.541);
+    border-radius: 10px;
+    color: white;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.button:hover{
+    background: rgba(212, 77, 77, 0.315);
+}
+
+p{
+    margin: 1%;
+    font-size: 1.5rem;
+    color: white;
+}

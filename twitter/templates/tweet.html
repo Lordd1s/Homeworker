@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+        <section class="icons">
+            <div class="bird"><a href="/posts/"><i class="bi bi-twitter"></i></a></div>
+            <div class="hash"><a href="/addpost/"><i class="bi bi-hash"></i><span>Add post</span></a></div>
+        </section>
+        <div class="inp">
+                <div class="search"><i class="bi bi-search"></i></div>
+            <input type="text">
+        </div>
+
+
+    {% block main %}
+        <div></div>
+    {% endblock main %}
+
+</body>
+</html>

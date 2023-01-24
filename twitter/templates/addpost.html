@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            box-sizing: border-box;
+            margin: 0 auto;
+            font-size: xx-large;
+
+        }
+        .body{
+            box-shadow: 5px 5px 5px rgb(202, 192, 192);
+        }
+        input{
+            background: gray;
+            border: none;
+            height: 100%;
+            border-radius: 5px;
+        }
+        input:hover{
+            background: rgb(87, 87, 87);
+            cursor: text;
+            border-radius: 10px;
+            transition: 0.7s;
+        }
+        textarea:hover{
+            background: rgb(87, 87, 87);
+            cursor: text;
+            transition: 0.7s;
+            border-radius: 10px;
+            }
+
+            .main{
+                height: 500px;
+                width: 50%;
+                margin: 1% auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+
+            .desc{
+                margin: 3%;
+                color: white;
+            }
+            textarea{
+                background: gray;
+                border-radius: 5px;
+            }
+
+            .title{
+                margin: 3%;
+                color: white;
+                width: 200px;
+            }
+
+            .but{
+                margin: 5% auto;
+                width: 100px;
+                height: 35px;
+                border-radius: 20px;
+                background: rgba(153, 255, 0, 0.521);
+            }
+            .but:hover{
+                cursor: pointer;
+            }
+    </style>
+    <div class="main">
+        <form  method="POST" action="{{ url_for('post_create') }}">
+        <div class="body">
+            <div class="title">
+                <label name="title">Title</label>
+                <input type="text" name="title">
+            </div>
+            <div class="desc">
+                <label  name="desc">Description</label>
+                <textarea class="desc1" name="desc"></textarea>
+            </div>
+            <div class="img"></div>
+            <div>
+                <input class="but" type="submit" value="Submit">
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
+
