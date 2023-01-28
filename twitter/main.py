@@ -16,7 +16,7 @@ def home():
 def posts():
     with open("templates/db.json", "r") as r_file:
         data_dict = json.load(r_file)
-    return render_template("posts.html", data_dict= data_dict)
+    return render_template("posts.html", data_dict=data_dict)
 
 
 @app.route('/addpost/', methods=['GET', 'POST'])

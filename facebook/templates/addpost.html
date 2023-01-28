@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            margin: 0 auto;
+            font-size: xx-large;
+            background-image: linear-gradient(to bottom right, #373B44, #4286f4);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 97.9vh;
+        }
+        .body{
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+        input{
+            background: gray;
+            border: none;
+            height: 100%;
+            border-radius: 5px;
+            transition: border-radius 0.7s, background 0.5s;
+        }
+        input:hover{
+            background: rgb(87, 87, 87);
+            cursor: text;
+            border-radius: 10px;
+
+        }
+        textarea:hover{
+            background: rgb(87, 87, 87);
+            cursor: text;
+            border-radius: 10px;
+            }
+
+            .main{
+                height: 500px;
+                width: 50%;
+                margin: 1% auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .desc{
+                margin: 3%;
+            }
+            textarea{
+                background: gray;
+                border-radius: 5px;
+                transition: border-radius 0.7s, background 0.5s;
+            }
+
+            .title{
+                margin: 3%;
+                width: 200px;
+            }
+
+            .title input{
+                height: 25px;
+            }
+
+            .but{
+                margin: 5% auto;
+                width: 100px;
+                height: 35px;
+                border-radius: 20px;
+                background:  #4286f4;
+                transition: border-radius 0.7s, background 0.5s;
+            }
+            .but:hover{
+                cursor: pointer;
+            }
+
+            input{
+                text-align: center;
+            }
+    </style>
+    <div class="main">
+        <form  method="POST" action="{{ url_for('post_create') }}">
+        <div class="body">
+            <div class="id">
+                <label name="id"></label>
+            </div>
+            <div class="title">
+                <label name="title">Title</label>
+                <input type="text" name="title">
+            </div>
+            <div class="desc">
+                <label  name="desc">Description</label>
+                <textarea class="desc1" name="desc"></textarea>
+            </div>
+            <div>
+                <input class="but" type="submit" value="Submit">
+            </div>
+        </div>
+        </form>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
+
