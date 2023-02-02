@@ -1,0 +1,53 @@
+{% extends "home.html" %}
+
+{% block form %}
+<form action="{{ url_for('add_') }}" method="POST">
+    <style>
+        form{
+            padding-top: 150px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+            width: 90%;
+            height: 60px;
+            border-radius: 10px;
+        }
+
+        .input{
+            padding: 1%;
+            width: 15%;
+            height: 50%;
+            border: none;
+            border-bottom: 1px solid black;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        form a{
+            background-color: bisque;
+        }
+
+        a input{
+            text-decoration: none;
+            transition: background 0.4s;
+            height: 60%;
+            width: 150%;
+            border: none;
+            border-bottom: 1px solid black;
+            border-radius: 5px;
+        }
+
+        a input:hover{
+            cursor: pointer;
+            background: cyan;
+
+        }
+    </style>
+    <input class="input" type="text" placeholder="id" name="ids">
+    <input class="input" type="text" placeholder="Currence ABBR" name="name">
+    <input class="input" type="number" placeholder="Price" min="0.1" max="9999" name="price">
+    <a href=""><input type="button" value="Share"></a>
+</form>
+{% endblock form %}
