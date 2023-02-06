@@ -1,0 +1,13 @@
+{% extends "home.html" %}
+
+{% block main %}
+        <div class="form">
+            <form method="POST" action="{{ url_for('add_w') }}">
+                <select name="name">
+                    <option value="Almaty">Almaty</option>
+                    <option value="Astana">Astana</option>
+                </select>
+                <input type="submit"  value="Get">
+            </form>
+        </div>
+{% endblock main %}

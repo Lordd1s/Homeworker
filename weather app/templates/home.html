@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div>
+            <span><a href="/">Welcome to weather app!</a></span>
+        </div>
+        <div><span><a href="/city/">Select city</a></span></div>
+    </header>
+    {% block main %}
+    {% endblock main %}
+
+    <main>
+        <div class="cities">
+            {% for i in data_dict %}
+                <div class="city">
+                    <span>Today</span>
+                    <span>Qyzylorda</span>
+                    <span>{{ i.temp }}</span>
+                </div>
+            {% endfor %}
+            {% for i in data_ %}
+                <div class="city">
+                    <span>{{ i.today }}</span>
+                    <span>{{ i.city }}</span>
+                    <span>{{ i.name }}</span>
+                </div>
+            {% endfor %}
+
+        </div>
+    </main>
+</body>
+</html>
