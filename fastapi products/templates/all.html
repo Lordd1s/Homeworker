@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/my_css.css') }}">
+</head>
+<body>
+    <section>
+        <div class="head">
+            <div class="sidebar">
+                <span><a href="/">All Products</a></span>
+                <br>
+                <span><a href="">Create Product</a></span>
+            </div>
+            <div class="products">
+                <div class="form">
+                    <form action="{{ url_for('create_product') }}" method="post">
+                        <label>Product name:</label>
+                        <br>
+                        <br>
+                        <input type="text" name="title">
+                        <br>
+                        <br>
+                        <br>
+                        <label>Price:</label>
+                        <br>
+                        <br>
+                        <input type="number" name="price" min="100" max="9999" value="500">
+                        <br>
+                        <br>
+                        <br>
+                        <label>Type Measure:</label>
+                        <br>
+                        <br>
+                        <input type="text" name="type_measure">
+                        <br>
+                        <br>
+                        <br>
+                        <input class="btn" type="submit" value="Send">
+                    </form>
+                </div>
+                <div class="product">
+                    {% for product in products %}
+                    <div class="span">
+                        <span class="prs">{{ product.title }}</span>
+                        <span class="prs">{{ product.price }}</span>
+                        <span class="prs">{{ product.type_measure }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -5,23 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 </head>
 <body>
     <header>
         <div>
-            <a href="/currencies/"><span>Exchange Rates</span></a>
-        </div>
-        <div>
-            <a href="/add/">Add currencies</a>
+            <a href=""><span>Exchange Rates</span></a>
         </div>
     </header>
-    {% block form %}
-    {% endblock form %}
+    <form method="post" action="{{ url_for('create_val') }}">
+        <input class="input" type="text" placeholder="Currence ABBR" name="name">
+        <input class="input" type="number" placeholder="Price" min="1" max="999" name="price">
+        <input class="input" type="submit" value="Share">
+    </form>
     <main>
-    {% block main %}
-        <div></div>
-    {% endblock main %}
+         {% for curre in arr_curr %}
+         <div class="curr">
+            <div class="currence">
+                <span>{{ curre.name }}</span>
+                <span>{{ curre.price }} tenge</span>
+                <span><a href="{{ url_for('delete_currence', title=curre.name) }}"><i class="bi bi-trash3"></i></a></span>
+            </div>
+          </div>
+        {% endfor %}
     </main>
 </body>
 </html>
