@@ -4,6 +4,8 @@ import requests
 from flask import Flask, render_template, request, redirect, url_for
 import bs4
 
+# ЛИБО САЙТ НЕ ДАЕТ ПРАВИЛЬНО ПАРСИТЬ ЛИБО МОЙ КОД ГАВНО!!! НО Я ЗАМЕТИЛ ИЗМЕНЕНИЕ ПОГОДЫ!!! КРЧ idk)
+
 app = Flask(__name__, template_folder="templates", static_url_path='/static', static_folder='static')
 
 headers = {
