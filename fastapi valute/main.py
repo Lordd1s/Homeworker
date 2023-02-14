@@ -92,14 +92,11 @@ async def create_val(request: Request):
 
 @app.get("/delete/{title}", response_class=HTMLResponse)
 async def delete_currence(request: Request, title: str):
-    try:
-        res = Database.delete_from_db(title=title)
-        if res:
-            return RedirectResponse("/", status_code=303)
-        else:
-            raise Exception("Failed to delete record from database")
-    except Exception as e:
-        print(f"Error deleting record from database: {e}")
-        raise e
+    res = Database.delete_from_db(title=title)
+    if res:
+        return RedirectResponse("/", status_code=303)
+    else:
+        raise Exception("Failed to delete record from database")
+
 
 ### i dont realize update method

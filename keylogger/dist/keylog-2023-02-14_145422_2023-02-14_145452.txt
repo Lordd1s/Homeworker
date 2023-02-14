@@ -1,0 +1,4 @@
+[ESC][SHIFT][CTRL]cd ../[ENTER]
+cd ../[ENTER]
+[UP][UP][ENTER]
+

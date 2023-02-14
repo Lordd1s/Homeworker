@@ -52,25 +52,12 @@ header span, a{
 }
 
 form{
-    padding-top: 150px;
+    width: 80%;
+    height: 70px;
+    padding-top: 200px;
+}
+
+.i{
+    width: 80%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 70px;
-    width: 90%;
-    height: 300px;
-    border-radius: 10px;
 }
-
-.input{
-    padding: 1%;
-    width: 20%;
-    height: 50%;
-    border: none;
-    border-bottom: 1px solid black;
-    border-radius: 5px;
-    outline: none;
-}
-
-
