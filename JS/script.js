@@ -13,3 +13,5 @@ function findFactors(num) {
   }
   return factors;
 }
+
+console.log(findFactors(59))
