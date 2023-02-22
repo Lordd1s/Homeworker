@@ -13,7 +13,6 @@ header{
     justify-content: center;
     align-items: center;
     gap: 50px;
-    position: fixed;
     background-color: rgb(158, 209, 39);
 }
 
@@ -51,13 +50,25 @@ header span, a{
     margin: 3%;
 }
 
-form{
-    width: 80%;
-    height: 70px;
-    padding-top: 200px;
-}
-
 .input{
     width: 20%;
-    margin: 0 auto;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+} 
+
+.i{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 2%;
+    padding: 2%;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+main{
+    padding-top: 50px ;
 }
