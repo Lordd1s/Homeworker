@@ -3,7 +3,7 @@ import datetime
 
 
 password_reqs = re.compile(r"^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).*$")
-email_reqs = re.compile(r"^[a-z0-9]+[\._]?[ a-z0-9]+[@]\w+[. ]\w{2,3}$")
+email_reqs = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
 now = datetime.datetime.now()
 save_date = now.strftime("%d.%m.%Y")
 save_time = now.strftime("%H_%M_%S")
