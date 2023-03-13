@@ -22,4 +22,3 @@ with open("new.txt", "w") as file:
 input("Print anything for quit or press 'Enter': ")
 print("BYE")
 input("")
-
