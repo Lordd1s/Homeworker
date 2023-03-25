@@ -52,7 +52,7 @@ class Show(UpdateMethod):
 
 
 update = UpdateMethod(user="pgs_user", password="Dias15", host="127.0.0.1", port="5432", dbname="pgs_db",
-                    query="UPDATE public.excel SET title=CONCAT(title, id::text) WHERE id % 2 = 0;")
+                    query="UPDATE public.excel SET title=CONCAT(title, id::text) WHERE id % 2 = 0;") # запросом облажался несколько раз! Из за этого в Title в конце бешенные цифры)
 
 # update.update_rows()
 
