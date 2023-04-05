@@ -27,9 +27,54 @@ def post_create():
         title = str(request.form.get("title"))
         desc = str(request.form.get("desc"))
         with open("templates/db.json", "r") as file:
-            data_dict = list(json.load(file))
-            dict1 = {"title": title.capitalize(), "description": desc.capitalize()}
-            data_dict.append(dict1)
+            data_list = list(json.load(file))
+            if data_list and "pk" in data_list[-1]:
+                ids = data_list[-1]["pk"] + 1
+            else:
+                ids = 1
+            dict1 = {"pk": ids, "title": title.capitalize(), "description": desc.capitalize()}
+            if dict1["title"] and dict1["description"] == "":
+                dict1["title"] = "Empty"
+                dict1["description"] = "Empty"
+            else:
+                data_list.append(dict1)
         with open("templates/db.json", "w") as file:
-            json.dump(data_dict, file, indent=4)
+            json.dump(data_list, file, indent=4)
         return redirect(url_for("posts"))
+
+@app.route('/posts/<int:post_id>/delete/')
+def posts_delete(post_id):
+    with open("templates/db.json", "r") as file:
+        data_dict = list(json.load(file))
+        _ = data_dict.pop(post_id - 1)
+    with open("templates/db.json", "w") as file:
+        json.dump(data_dict, file)
+    return redirect(url_for("posts"))
+
+
+@app.route('/updatepost/<int:pk>/', methods=['GET', 'POST'])
+def post_update(pk):
+    if request.method == "GET":
+        with open("templates/db.json", "r") as file:
+            data_list = json.load(file)
+            post = next((item for item in data_list if item["pk"] == pk), None)
+            if post:
+                return render_template("updatepost.html", post=post)
+            else:
+                return render_template("notfound.html")
+    elif request.method == "POST":
+        title = str(request.form.get("title"))
+        desc = str(request.form.get("desc"))
+        with open("templates/db.json", "r") as file:
+            data_list = json.load(file)
+            for post in data_list:
+                if post["pk"] == pk:
+                    post["title"] = title.capitalize()
+                    post["description"] = desc.capitalize()
+                    break
+        with open("templates/db.json", "w") as file:
+            json.dump(data_list, file, indent=4)
+        return redirect(url_for("posts"))
+
+
+

@@ -4,6 +4,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     box-sizing: border-box;
+
 }
 
 a{
@@ -116,11 +117,22 @@ input:hover{
 }
 
 .button:hover{
-    background: rgba(212, 77, 77, 0.315);
+    background: rgba(212, 255, 77, 0.315);
 }
 
 p{
     margin: 1%;
     font-size: 1.5rem;
     color: white;
+}
+
+.p{
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.p span{
+    font-size: 1.5rem;
+    color: red;
 }

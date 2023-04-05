@@ -17,13 +17,23 @@
             font-size: xx-large;
 
         }
+        a{
+            text-decoration: none;
+            color: black;
+        }
         .body{
-            box-shadow: 5px 5px 5px rgb(202, 192, 192);
+            box-shadow: 0px 0px 10px rgb(202, 192, 192);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+
         }
         input{
             background: gray;
             border: none;
-            height: 100%;
+            height: 50px;
+            width: 100px;
             border-radius: 5px;
         }
         input:hover{
@@ -39,7 +49,7 @@
             border-radius: 10px;
             }
 
-            .main{
+        .main{
                 height: 500px;
                 width: 50%;
                 margin: 1% auto;
@@ -49,29 +59,40 @@
                 color: white;
             }
 
-            .desc{
+        .desc{
                 margin: 3%;
                 color: white;
+                display: flex;
+                flex-direction: column;
             }
-            textarea{
+        textarea{
                 background: gray;
                 border-radius: 5px;
+                resize: none;
+                font-size: 1.5rem;
             }
 
-            .title{
-                margin: 3%;
+        .title{
+                display: flex;
+                flex-direction: column;
+                padding: 3%;
                 color: white;
-                width: 200px;
             }
+        .title input{
+                width: 100%;
+                font-size: 1.5rem;
+        }
 
-            .but{
+        .but{
+                display: grid;
+                place-items: center;
                 margin: 5% auto;
-                width: 100px;
+                width: 80%;
                 height: 35px;
-                border-radius: 20px;
+                border-radius: 10px;
                 background: rgba(153, 255, 0, 0.521);
             }
-            .but:hover{
+        .but:hover{
                 cursor: pointer;
             }
     </style>
@@ -86,9 +107,9 @@
                 <label  name="desc">Description</label>
                 <textarea class="desc1" name="desc"></textarea>
             </div>
-            <div class="img"></div>
             <div>
                 <input class="but" type="submit" value="Submit">
+                <button type="button" class="but"><a href=/posts/>Return to posts!</a></button>
             </div>
         </div>
         </form>
