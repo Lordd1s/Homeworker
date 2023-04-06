@@ -1,4 +1,5 @@
-
+build/
+dist/
 PyE-222-1/
 idea/
 env/
