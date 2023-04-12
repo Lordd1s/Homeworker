@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+{% for row in rows %}
+<div class="b">
+    <div class="container">
+        <h3 class="h3">{{ row.title }}</h3>
+        <p class="p">{{ row.description }}</p>
+        <h4 class="h4">{{ row.salary }}</h4>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock main %}
