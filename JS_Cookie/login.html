@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        width: 400px;
+        margin: 0 auto;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login Form</h1>
+    <form id="login-form" name="login">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" />
+      <input id="log-btn" type="submit" value="Login" />
+    </form>
+    <div id="welcome"></div>
+
+    <script type="module">
+      let registerBtn = document.getElementById("log-btn");
+      registerBtn.addEventListener("click", login);
+
+      function setCookie(cookieName, cookieValue, exdays) {
+        const date = new Date();
+        date.setTime(date.getTime() + exdays * 24 * 60 * 60 * 1000);
+        let expires = "expires=" + date.toUTCString();
+        document.cookie =
+          cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+      }
+
+      function getCookie(cookieName) {
+        let name = cookieName + "=";
+        let cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+          let cookie = cookies[i];
+          while (cookie.charAt(0) == " ") {
+            cookie = cookie.substring(1);
+          }
+          if (cookie.indexOf(name) == 0) {
+            return cookie.substring(name.length, cookie.length);
+          }
+        }
+        return "";
+      }
+
+      async function login(e) {
+        e.preventDefault();
+        let myUser = null;
+        let form = document.forms.login;
+        let username = form.elements.username.value;
+        let password = form.elements.password.value;
+
+        const response = await fetch(
+          "https://crudcrud.com/api/db78e9b91b9740708e6acb872ee3c4e0/users"
+        );
+        const users = await response.json();
+
+        let findUser = false;
+        for (let user of users) {
+          if (user.username === username && user.password === password) {
+            myUser = user;
+            findUser = true;
+            break;
+          }
+        }
+        if (findUser === false) {
+          alert("Не получилось найти юзера");
+        }
+        setCookie("_id", myUser._id, 30);
+        window.location = "http://127.0.0.1:8080/home.html";
+      }
+
+      window.addEventListener("DOMContentLoaded", checkAuth);
+
+      function checkAuth() {
+        if (getCookie("_id") === "") {
+          window.location = "http://127.0.0.1:8080/registration.html";
+        }}
+    </script>
+  </body>
+</html>
