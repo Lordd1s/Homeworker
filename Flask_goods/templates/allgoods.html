@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block main %}
+<table>
+<tbody>
+    <tr>
+        <td>Name of product</td>
+        <td>Description</td>
+        <td>Price (KZT)</td>
+        <td>Count (Kg.)</td>
+        <td>Delete product</td>
+    </tr>
+    {% for object in arr %}
+    <tr>
+        <td>{{ object.title }}</td>
+        <td>{{ object.desc }}</td>
+        <td>{{ object.price }}</td>
+        <td>{{ object.count }}</td>
+        <td><a href=""><i class="bi bi-recycle"></i></a><a href="/allgoods/{{ object.id }}/delete"><i class="bi bi-trash"></i></a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+{% endblock main %}

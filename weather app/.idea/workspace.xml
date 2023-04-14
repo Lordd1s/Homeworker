@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac1fe255-7514-44c0-8784-d9e3620c6203" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../fastapi valute/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fastapi valute/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fastapi valute/script_activate_env_and_fastapi.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../fastapi valute/script_activate_env_and_fastapi.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fastapi valute/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../fastapi valute/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fastapi valute/templates/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fastapi valute/templates/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fastapi valute/templates/currencies.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fastapi valute/templates/currencies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fastapi valute/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fastapi valute/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/templates/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/db2.json" beforeDir="false" afterPath="$PROJECT_DIR$/templates/db2.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LK0UekIMLc1Ahwd3ZH4a1A6r0v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Homeworker\weather app\templates" />
+      <recent name="E:\Homeworker\weather app\static" />
+      <recent name="E:\Homeworker\weather app" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac1fe255-7514-44c0-8784-d9e3620c6203" name="Changes" comment="" />
+      <created>1675604485977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675604485977</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
