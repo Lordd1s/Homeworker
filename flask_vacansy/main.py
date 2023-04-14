@@ -18,7 +18,7 @@ def show_all_vacancy():
         with psycopg2.connect(user="pgs_user", password="Dias15", host="127.0.0.1", port="5432",
                               dbname="pgs_db") as connection:
             with connection.cursor() as cursor:
-                cursor.execute("SELECT * FROM public.vacs")
+                cursor.execute('SELECT title, description, salary FROM public.vacs')
                 rows = cursor.fetchall()
                 print(rows)
                 if rows is None:
@@ -33,7 +33,7 @@ def show_all_vacancy():
         search = request.form['search'].strip()
         with psycopg2.connect(user="pgs_user", password="Dias15", host="127.0.0.1", port="5432", dbname="pgs_db") as connection:
             with connection.cursor() as cursor:
-                cursor.execute("SELECT title, description, salary FROM vacs WHERE title LIKE %s;", ('%' + search + '%',))
+                cursor.execute('SELECT title, description, salary FROM vacs WHERE title LIKE %s;', ('%' + search + '%',))
                 rows = cursor.fetchall()
                 print(rows)
                 if rows is None:
