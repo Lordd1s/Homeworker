@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block main %}
+<div class="alls">
+{% for object in obj %}
+<ul class="all">
+    <li class="allIn">{{ object.id }}</li>
+    <li class="allIn">{{ object.title }}</li>
+    <li class="allIn">{{ object.completed }}</li>
+    <li class="allIn"><a href="#"><i class="bi bi-trash3-fill"></i></a></li>
+    <hr>
+</ul>
+{% endfor %}
+</div>
+{% endblock %}

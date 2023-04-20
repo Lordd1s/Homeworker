@@ -2,36 +2,35 @@
 
 {% block main %}
 <div class="form">
-    <form action="{{ url_for('prod_upd', pk=product.id) }}" method="POST">
+    <form action="{{ url_for('create_product') }}" method="POST">
         <label>Product title:</label>
         <br>
         <br>
-        <input type="text" name="title" value="{{ product.title }}">
+        <input type="text" name="title">
         <br>
         <br>
         <br>
         <label>Product description:</label>
         <br>
         <br>
-        <input type="text" name="desc" value="{{ product.desc}}">
+        <input type="text" name="desc">
         <br>
         <br>
         <br>
         <label>Price:</label>
         <br>
         <br>
-        <input type="number" name="price" step="0.01" min="100" max="9999" value="{{ product.price }}">
+        <input type="number" name="price" step="0.01" min="100" max="9999" value="500">
         <br>
         <br>
         <br>
         <label>Count:</label>
         <br>
         <br>
-        <input type="number" name="count" step="0.01" value="{{ product.count }}">
+        <input type="number" name="count", step="0.01">
         <br>
         <br>
         <br>
-        <div><button class="btn" type="submit">Update</button></div>
-    </form>
+        <div><button class="btn" type="submit">Send</button></div>
 </div>
 {% endblock main %}

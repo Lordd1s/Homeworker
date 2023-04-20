@@ -8,7 +8,7 @@
         <td>Description</td>
         <td>Price (KZT)</td>
         <td>Count (Kg.)</td>
-        <td>Delete | Update product</td>
+        <td>Delete product</td>
     </tr>
     {% for object in arr %}
     <tr>
@@ -16,10 +16,7 @@
         <td>{{ object.desc }}</td>
         <td>{{ object.price }}</td>
         <td>{{ object.count }}</td>
-        <td>
-            <a href="/allgoods/{{ object.id }}/update"><i class="fa-regular fa-pen-to-square"></i></a>
-            <a href="/allgoods/{{ object.id }}/delete"><i class="bi bi-trash"></i></a>
-        </td>
+        <td><a href=""><i class="bi bi-recycle"></i></a><a href="/allgoods/{{ object.id }}/delete"><i class="bi bi-trash"></i></a></td>
     </tr>
     {% endfor %}
 </tbody>

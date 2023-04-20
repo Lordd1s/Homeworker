@@ -41,7 +41,7 @@ class Db:
                     return status
 
     @staticmethod
-    def delete_from_db(query: str, pk: int) -> bool:
+    def delete_from_db(query: str, pk: tuple) -> bool:
         """
         This method DELETE from Database (inputting PostgreSQL request to delete)
         """
@@ -62,14 +62,14 @@ class Db:
                     return status
 
     @staticmethod
-    def select_one(query: str):
+    def select_one(query: str, one_val: tuple):
         """
         This method show one row in PostgreSQL!
         """
         with psycopg2.connect(user="postgres", password="Dias15", host="127.0.0.1", port="5432",
                               dbname="goods") as connection:
             with connection.cursor() as cursor:
-                cursor.execute(query)
+                cursor.execute(query, one_val)
                 rows = cursor.fetchone()
                 row = {
                     "id": rows[0],
@@ -87,7 +87,7 @@ class Db:
             with connection.cursor() as cursor:
                 status = False
                 try:
-                    cursor.execute(query)
+                    cursor.execute(query, upd_data)
                 except Exception as error:
                     print("error", error)
                     connection.rollback()
@@ -105,7 +105,6 @@ def hom_page():
 @app.route('/allgoods', methods=['GET'])
 def goods():
     arr = Db.select_all('SELECT id, title, description, price, count FROM public.goods')
-    print(arr, type(arr))
     products = [
         {
             "id": x[0],
@@ -134,24 +133,25 @@ def create_product():
 
 @app.route('/allgoods/<int:pk>/delete', methods=['GET', 'POST', 'DELETE'])
 def product_delete(pk):
-    Db.delete_from_db('DELETE FROM public.goods WHERE id=%s', pk)
+    Db.delete_from_db('DELETE FROM public.goods WHERE id=%s', (pk,))
     return redirect(url_for("goods"))
 
 
-@app.route('/allgoods/<int:pk>/update', methods=['GET', 'POST'])
+@app.route('/allgoods/<int:pk>/update', methods=['GET','POST'])
 def prod_upd(pk):
     if request.method == 'GET':
-        one_product = Db.select_one('SELECT id, title, description, price, count FROM public,goods')
+        one_product = Db.select_one('SELECT id, title, description, price, count FROM public.goods WHERE id = %s',
+                                    (pk,))
         return render_template('upd.html', product=one_product)
     elif request.method == 'POST':
         title = request.form.get("title")
         desc = request.form.get("desc")
         price = request.form.get("price")
         count = request.form.get("count")
-        query = "UPDATE posts SET title = %s, description = %s, price = %s count = %s WHERE id = %s"
+        query = 'UPDATE public.goods SET title = %s, description = %s, price = %s, count = %s WHERE id = %s'
         values = (title, desc, price, count, pk)
         Db.update(query=query, upd_data=values)
-        return redirect(url_for('goods', pk=pk))
+        return redirect(url_for('goods'))
 
 
 if __name__ == "__main__":
