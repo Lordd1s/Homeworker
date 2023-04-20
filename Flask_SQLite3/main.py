@@ -1,5 +1,4 @@
 import contextlib
-
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 
@@ -59,13 +58,13 @@ class Db:
                 return status
 
     @staticmethod
-    def select_one(query: str):
+    def select_one(query: str, one_val: tuple):
         """
         This method show one row in PostgreSQL!
         """
         with contextlib.closing(sqlite3.connect('database.db')) as connection:
             cursor = connection.cursor()
-            cursor.execute(query)
+            cursor.execute(query, one_val)
             rows = cursor.fetchone()
             row = {
                 "id": rows[0],
@@ -82,7 +81,7 @@ class Db:
             cursor = connection.cursor()
             status = False
             try:
-                cursor.execute(query)
+                cursor.execute(query, upd_data)
             except Exception as error:
                 print("error", error)
                 connection.rollback()
@@ -135,17 +134,17 @@ def product_delete(pk):
 @app.route('/allgoods/<int:pk>/update', methods=['GET', 'POST'])
 def prod_upd(pk):
     if request.method == 'GET':
-        one_product = Db.select_one('SELECT id, title, description, price, count FROM products')
+        one_product = Db.select_one('SELECT id, title, description, price, count FROM products WHERE id=?', (pk, ))
         return render_template('upd.html', product=one_product)
     elif request.method == 'POST':
         title = request.form.get("title")
         desc = request.form.get("desc")
         price = request.form.get("price")
         count = request.form.get("count")
-        query = 'UPDATE posts SET title=?, description=?, price=? count=? WHERE id=?'
+        query = 'UPDATE products SET title=?, description=?, price=?, count=? WHERE id=?'
         values = (title, desc, price, count, pk)
         Db.update(query=query, upd_data=values)
-        return redirect(url_for('goods', pk=pk))
+        return redirect(url_for('goods'))
 
 
 def create_sql():
