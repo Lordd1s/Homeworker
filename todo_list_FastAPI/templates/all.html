@@ -1,15 +1,31 @@
 {% extends "index.html" %}
 
 {% block main %}
-<div class="alls">
+<table>
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Completed</th>
+          <th>Delete | Update</th>
+        </tr>
+  </thead>
+
 {% for object in obj %}
-<ul class="all">
-    <li class="allIn">{{ object.id }}</li>
-    <li class="allIn">{{ object.title }}</li>
-    <li class="allIn">{{ object.completed }}</li>
-    <li class="allIn"><a href="#"><i class="bi bi-trash3-fill"></i></a></li>
-    <hr>
-</ul>
+    <tbody>
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.title }}</td>
+            <td>{{ object.completed }}</td>
+            <td>
+                <form class="delete" action="{{ url_for('delete_json', pk=object.id) }}" method="POST">
+                    <button class="delete" type="submit"><i class="fa-solid fa-trash"></i></button>
+                </form>
+                <a href="{{ url_for('update_page', pk=object.id) }}"><i class="fa-solid fa-recycle"></i></a>
+            </td>
+        </tr>
+    </tbody>
 {% endfor %}
-</div>
+</table>
+
 {% endblock %}

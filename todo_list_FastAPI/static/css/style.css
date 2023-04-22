@@ -44,32 +44,123 @@ nav ul li a:hover {
     font-size: 5rem;
 }
 
-.alls {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 1% auto;
-    background-color: #f2f2f2;
-    overflow: hidden;
-    border-radius: 5px;
-  }
-  
-.allIn {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-
-  
-.all {
-    padding: 0;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-.allIn a {
-    color: #333;
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  background-color: #ddd;
+}
+
+th {
+  background-color: #555;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+td:last-child {
+    display: flex;
+    justify-content: start;
+    gap: 50px;
+}
+
+td button {
+    color: red;
+    border: none;
+    cursor: pointer;
+}
+
+td a:last-child {
+    color: green;
     text-decoration: none;
-    float: right;
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 50px auto;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #e6e6e6;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    border-bottom: 2px solid #333;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:before {
+    content: '\2713';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked:before {
+    opacity: 1;
+    left: 4px;
+}
+
+.button {
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #666;
 }

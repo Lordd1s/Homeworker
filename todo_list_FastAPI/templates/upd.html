@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block main %}
+<div class="form">
+<form action="{{ url_for('update_json', pk=post.id) }}" method="POST">
+
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required value="{{ post.title }}">
+
+  <label for="completed">Completed:</label>
+  <input type="checkbox" id="completed" name="completed" {% if post.completed %} checked {% endif %}>
+
+  <button class="button" type="submit">Update</button>
+
+</form>
+</div>
+{% endblock main %}
