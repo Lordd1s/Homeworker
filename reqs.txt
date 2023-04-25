@@ -1,0 +1,26 @@
+Django or Flask
+PostgreSQL, MySQL)
+(AWS, GCP, Azure)
+API building principles in web (REST API)
+Kubernetes or Docker Swarm
+gRPC, http2,rest
+CI\CD
+The Zen of Python
+Bash/Zsh/etc
+react, reactnative, nodejs
+rabbitMQ, Kafka
+MVC, MVVM
+Pyramid
+Redis
+asyncio, aiohttp, jQuery
+Sanic
+Prometeus/Graphite/Grafana/ELK;
+Nginx/Haproxy;
+GraphQL, Angular
+Celery, MongoDB
+Swagger, Sphinx
+TeamCity/Jenkins
+Jira/Youtrack
+Express, Webapp2
+SCSS, pytest, eslint
+DynamoDN
