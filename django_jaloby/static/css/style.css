@@ -1,0 +1,89 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #076585, #fff);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    text-align: center;
+    text-shadow: 5px 5px 5px gray;
+    color: #292E49;
+}
+
+h3 {
+    text-align: center;
+}
+
+a {
+    color: #076585;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+div form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: clamp(100px, 500px, 500px);
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px gray;
+    padding: 1%;
+    background: linear-gradient(180deg, #1488CC, #4c52c9);
+}
+
+label {
+    margin: 1%;
+}
+
+textarea {
+    padding: 1%;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #ffffff97;
+}
+
+input {
+    padding: 1%;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+    background: #ffffff97;
+}
+
+button {
+    width: clamp(100px, 200px, 250px);
+    padding: 1%;
+    margin: 3% auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2% auto;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+th {
+    background-color: #076585;
+    color: #fff;
+}

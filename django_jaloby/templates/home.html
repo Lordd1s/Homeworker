@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Электронная книга жалоб</h1>
+    <div>
+        <form action="{% url 'jaloba' %}" method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <label for="nick">Как к вам обращаться?</label>
+            <input type="text" name="nick" id="nick">
+
+            <label for="phone">Ваш тел. номер</label>
+            <input type="tel" name="phone" id="phone" placeholder="Пишите без +!">
+
+            <label for="jaloba">Расскажите то, чего вам не нравится!</label>
+            <textarea name="jaloba" id="jaloba" cols="30" rows="10"></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

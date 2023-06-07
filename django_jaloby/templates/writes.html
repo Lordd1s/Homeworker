@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+        <table>
+        <tr>
+            <th>Имя заявителя</th>
+            <th>Номер телефона</th>
+            <th>Жалоба</th>
+        </tr>
+            {% for jaloba in jaloby %}
+        <tr>
+
+            <td>{{ jaloba.name }}</td>
+            <td>{{ jaloba.phone }}}</td>
+            <td>{{ jaloba.jaloba }}</td>
+
+        </tr>
+            {% endfor %}
+    </table>
+
+</body>
+</html>
