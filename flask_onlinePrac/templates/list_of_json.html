@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+
+{% block main %}
+<table>
+<tbody>
+    <tr>
+        <td>userId</td>
+        <td>id</td>
+        <td>title</td>
+        <td>body</td>
+    </tr>
+    {% for object in datas %}
+    <tr>
+        <td>{{ object.userId }}</td>
+        <td>{{ object.id }}</td>
+        <td>{{ object.title }}</td>
+        <td>{{ object.body }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock %}

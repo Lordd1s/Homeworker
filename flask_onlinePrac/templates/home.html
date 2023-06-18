@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div>
+    {% block main %}
+    <h1>HEllO</h1>
+    <div>
+        <a href="{{ url_for('get_json')}}">GET CRAAAAAAAAAAAAAZY JSONS)</a>
+    </div>
+    {% endblock %}
+</div>
+</body>
+</html>
