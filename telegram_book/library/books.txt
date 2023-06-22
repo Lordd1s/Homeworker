@@ -1,0 +1,4 @@
+[2023-06-22 21:50:30.746384] [Errno 2] No such file or directory: 'books/items.json'
+[2023-06-22 21:55:32.821899] [Errno 2] No such file or directory: 'data/items.json'
+[2023/06/d, 21:59:26] [Errno 2] No such file or directory: 'data/items.json'
+[2023/06/d, 22:06:23] A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat_id is empty
