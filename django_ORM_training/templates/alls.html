@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+
+{% load static %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    {% for data in context %}
+    <tr>
+        <td>{{ data.something }}</td>
+        <td>{{ data.title }}</td>
+        <td>{{ data.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
