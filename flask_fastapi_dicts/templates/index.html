@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <style>
+            h1 {
+                text-align: center;
+            }
+
+            h3 {
+                text-align: center;
+            }
+
+            .all {
+                margin: 0 auto;
+                display: flex;
+                width: 80%;
+                color: brown;
+            }
+
+            .flask {
+                width: 50%;
+            }
+
+            .fastapi {
+                width: 50%;
+            }
+        </style>
+    <h1>Frameworks</h1>
+    <div class="all">
+        <div class="flask">
+            <h3>Flask</h3>
+            <ul>
+                {% for i in contexts %}
+                <li>{{ i.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="fastapi">
+            <h3>Fastapi</h3>
+            <ul>
+                {% for i in context %}
+                <li>{{ i.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
