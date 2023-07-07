@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css '%}">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Datas in ORM</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Born Date</th>
+      <th>City</th>
+    </tr>
+    {% for i in students %}
+    <tr>
+      <td>{{ i.name }}</td>
+      <td>{{ i.born_date }}</td>
+      <td>{{ i.where_born }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>Additional Content</h2>
+  <p>This is some additional content on the page.</p>
+</body>
+</html>
