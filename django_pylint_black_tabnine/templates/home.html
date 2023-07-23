@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Authenticate</title>
+</head>
+<body>
+    <header class="header">
+        {% if request.user.is_authenticated %}
+        <span class="username">Welcome {{ request.user.username }}</span>
+        <a href="{% url 'logout' %}" class="cyberpunk-link">Logout</a>
+        {% else %}
+        <span class="username">Welcome Guest</span>
+        {% endif %}
+
+        {% if error %}
+            <span>{{ error }}</span>
+        {% endif %}
+    </header>
+
+    <div class="cyberpunk-content">
+        {% block body %}
+        <a href="{% url 'register' %}" class="cyberpunk-link">Registrate</a>
+        {% endblock %}
+
+        {% block main %}
+        <a href="{% url 'login' %}" class="cyberpunk-link">Login</a>
+        {% endblock %}
+    </div>
+
+    <h1 class="cyberpunk-heading">Have a good day!</h1>
+</body>
+</html>
