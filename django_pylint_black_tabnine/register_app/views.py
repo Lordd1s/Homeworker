@@ -1,19 +1,22 @@
+import hashlib
 from django.contrib.auth import authenticate, login as django_login
 from django.contrib.auth import logout as django_logout
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.models import User
-import hashlib
 
 
 # Create your views here.
-def home(request):
+def home(request) -> HttpResponse:
+    """Home page."""
     return render(request, "home.html")
 
 
-def register(request):
-    """"""
+def register(request) -> redirect:
+    """Register a new user."""
     if request.method == "GET":
         return render(request, "register.html")
+
     elif request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -48,7 +51,8 @@ def register(request):
         return redirect(reverse("home"))
 
 
-def login(request):
+def login(request) -> redirect:
+    """Login a user."""
     if request.method == "GET":
         return render(request, "login.html")
     if request.method == "POST":
@@ -72,6 +76,7 @@ def login(request):
             return render(request, "login.html", {"error": "Invalid credentials."})
 
 
-def logout(request):
+def logout(request) -> redirect:
+    """Logout a user."""
     django_logout(request)
     return redirect(reverse("home"))
