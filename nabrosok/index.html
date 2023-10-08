@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Отслеживание посылок</title>
+    <!-- Подключение библиотеки Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Заголовок (Header) с использованием Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="#">Отслеживание посылок</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="display-4 text-center">Отслеживание посылок</h1>
+        <div class="form-group">
+            <label for="trackingNumber">Введите номер отслеживания:</label>
+            <input type="text" class="form-control" id="trackingNumber" name="trackingNumber" required>
+        </div>
+        <button class="btn btn-primary btn-block">Отследить</button>
+
+        <div class="mt-4" id="trackingResult">
+            <!-- Здесь будет отображаться результат отслеживания посылки -->
+        </div>
+    </div>
+
+    <!-- Подвал (Footer) с использованием Bootstrap Footer и класса fixed-bottom -->
+    <footer class="footer py-3 bg-light fixed-bottom">
+        <div class="container text-center">
+            <span class="text-muted">© 2023 Отслеживание посылок</span>
+        </div>
+    </footer>
+
+    <!-- Подключение библиотеки Bootstrap JavaScript (для интерактивных элементов) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
