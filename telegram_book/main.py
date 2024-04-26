@@ -4,7 +4,7 @@ import json
 import datetime
 import os
 
-bot = telebot.TeleBot('6242141561:AAHwTfr7ADHUJiqtMnDT9bK85aw51qMeW9Y')
+bot = telebot.TeleBot('')
 
 ERROR_TEXT = "Произошла ошибка, попробуйте ещё раз или обратитесь к администратору"
 DEBUG = False
